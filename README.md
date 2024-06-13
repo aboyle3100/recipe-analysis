@@ -93,6 +93,9 @@ This project takes a deep dive into the realm of recipe rating prediction. Invol
 10. Convert ratings columns to ints to be later used in model evaluation
 11. Include a sugar feature which returns true if there is sugar in the name
 
+
+#### Head of the cleaned dataframe
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -316,7 +319,6 @@ This project takes a deep dive into the realm of recipe rating prediction. Invol
   </tbody>
 </table>
 
-Head of the cleaned dataframe.
 
 
 
@@ -501,7 +503,12 @@ Using K-S Statistic as test statistic,
 With a p-value of 0.9989, we fail to reject the null hyporthesis that distributions of rating is different for columns missing reviews. This indicates that missingness of review not dependent on rating.
 <!--  -->
 
-
+<iframe
+  src="assets/missing review rating.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 
 
@@ -517,12 +524,16 @@ Using K-S Statistic as test statistic,
 With a p-value of 0.01462006091994894, we reject the null hyporthesis in favor of the alternative hypothesis that the missingness of steps is dependent on rating.
 
 
+<iframe
+  src="assets/missing rating steps.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
 
 
 <!--  -->
-
-
-
 
 
 
