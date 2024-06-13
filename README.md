@@ -495,6 +495,7 @@ Testing whether review missingness is dependent on rating.
 Using K-S Statistic as test statistic,    
 ##### Null Hypothesis:    
 - Missingness of review is not dependent on rating. They have the same distribution.    
+
 ##### Alternative Hypothesis:   
 - The distribution of ratings is different for columns missing reviews.   
 
@@ -515,7 +516,8 @@ With a p-value of 0.9989, we fail to reject the null hyporthesis that distributi
 Procedure:    
 Using K-S Statistic as test statistic,    
 ##### Null Hypothesis:    
-- Missingness of steps is not dependent on rating. They have the same distribution.    
+- Missingness of steps is not dependent on rating. They have the same distribution.   
+
 ##### Alternative Hypothesis:   
 - The distribution of steps is different for columns missing reviews.   
 
@@ -643,6 +645,7 @@ Procedure:
 Using absolute difference of means as test statistic,    
 ##### Null Hypothesis:    
 - Our model is fair. There is not a difference in f1_score for long and short recipes   
+
 ##### Alternative Hypothesis:   
 - Our model is unfair. There is a difference in f1_score for long and short recipes   
 
