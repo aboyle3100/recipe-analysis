@@ -104,6 +104,7 @@ Describe, in detail, the data cleaning steps you took and how they affected your
 7. Create columns for nutrition related columns as proportion makeup of the recipe
 8. Create column for average step length
 9. Create column for interaction between n_steps and average_step_length
+10. Convert ratings columns to ints to be later used in model evaluation
 
 <iframe
   src="assets/cleaned_df.html"
@@ -297,6 +298,26 @@ This would be a multiclass classification problem which predicts ratings based o
 <!--  -->
 
 ## **Baseline Model**
+
+#### Regression Model
+RMSE Score: 0.49, R^2: 0.0002369  
+Features: 'calories(number)' (quantitative), 'minutes' (quantitative)   
+Predicting: Average Rating
+
+#### Classification Problem
+
+\[ \text{F1 Score} = 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}} \]
+
+Where:
+- **Precision** is the number of true positive results divided by the number of all positive results, including those not correctly identified.
+  \[ \text{Precision} = \frac{\text{True Positives}}{\text{True Positives} + \text{False Positives}} \]
+
+- **Recall** is the number of true positive results divided by the number of positives that should have been identified.
+  \[ \text{Recall} = \frac{\text{True Positives}}{\text{True Positives} + \text{False Negatives}} \]
+
+F1_score: .674, .676 for training and testing sets respectively
+Features: 'calories(number)' (quantitative), 'minutes' (quantitative)   
+Predicting: Rating
 
 ## **Final Model**
 
