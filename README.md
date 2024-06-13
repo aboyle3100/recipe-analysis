@@ -105,6 +105,7 @@ Describe, in detail, the data cleaning steps you took and how they affected your
 8. Create column for average step length
 9. Create column for interaction between n_steps and average_step_length
 10. Convert ratings columns to ints to be later used in model evaluation
+11. Include a sugar feature which returns true if there is sugar in the name
 
 <iframe
   src="assets/cleaned_df.html"
@@ -292,7 +293,7 @@ This regression model will predict average rating of a recipe. This would be as 
 
 #### Classification Problem
 Metric: F1-Score    
-This would be a multiclass classification problem which predicts ratings based on the features in the dataset. I will utilize both GridSearchCV as well as a random forest to make these predictions. I would choose the F1 Score in this case because there is a large presence of one rating in the training data. The combination this and using accuracy as a metric leads to a model that is incentivized to predict one rating every time. 
+This would be a multiclass classification problem which predicts ratings based on the features in the dataset. I will utilize both GridSearchCV as well as a random forest to make these predictions. I would choose the F1 Score in this case because there is a large presence of one rating in the training data. The combination this and using accuracy as a metric leads to a model that is incentivized to predict one rating every time. F1 score also captures a good ratio of precision and recall
 
 
 <!--  -->
@@ -306,20 +307,25 @@ Predicting: Average Rating
 
 #### Classification Problem
 
-\[ \text{F1 Score} = 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}} \]
-
-Where:
-- **Precision** is the number of true positive results divided by the number of all positive results, including those not correctly identified.
-  \[ \text{Precision} = \frac{\text{True Positives}}{\text{True Positives} + \text{False Positives}} \]
-
-- **Recall** is the number of true positive results divided by the number of positives that should have been identified.
-  \[ \text{Recall} = \frac{\text{True Positives}}{\text{True Positives} + \text{False Negatives}} \]
-
 F1_score: .674, .676 for training and testing sets respectively
 Features: 'calories(number)' (quantitative), 'minutes' (quantitative)   
 Predicting: Rating
 
 ## **Final Model**
+
+#### Regression Model
+
+RMSE Score: 0.4925110755228968, 0.4943589840553027 for train and test data respectively
+Features: 'calories(number)' (quantitative), 'n_steps' (quantitative), 'sugar' (categorical), 'minutes' (quantitative), 'protein(proportion)' (quantitative), 'n_steps_average_step_length' (quantitative)     
+Predicting: Average Rating
+
+#### Classification Model 
+
+F1_score: 0.6748, 0.6728 for training and testing sets respectively
+Features: 'calories(number)' (quantitative), 'n_steps' (quantitative), 'sugar' (categorical), 'minutes' (quantitative), 'protein(proportion)' (quantitative), 'n_steps_average_step_length' (quantitative)   
+Predicting: Rating
+
+Best Parameters: 'class_weight': {1: 4, 2: 4, 3: 4, 4: 5, 5: 6}, 'max_depth': 10
 
 ## **Fairness Analysis**
 
