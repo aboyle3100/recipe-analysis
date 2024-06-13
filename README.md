@@ -1,4 +1,4 @@
-# **Inner Machinations of a Good Recipe**
+# **What makes a Good Recipe**
 
 Andrew Boyle 
 
@@ -332,7 +332,6 @@ This project takes a deep dive into the realm of recipe rating prediction. Invol
 
 
 #### Univariate Analysis
-ADD MORE IN Future with different types
 
 <iframe
   src="assets/ingredients_per_recipe.html"
@@ -361,7 +360,7 @@ The distribution of amounts of ingredients per recipe looks roughly normal, howe
 ></iframe>
 
 
-> Based on the box plot it appears the amount of calories in the recipe and the rating are not correlated.
+Based on the box plot it appears the amount of calories in the recipe and the rating are not correlated.
 
 
 
@@ -471,7 +470,6 @@ Calorie counts tend to go down as ratings increase while ingredients stays the s
 
 
 <!--  -->
- STILL NEED TO ADD PLOTS FOR THIS TO GO ALONG. USE PLOT_KDE
 ## **Assignment of Missingness**
 
 NMAR Definition: The missingness of a column is dependent on another column in a dataset
