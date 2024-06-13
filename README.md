@@ -378,11 +378,96 @@ The distribution of amounts of ingredients per recipe looks roughly normal, howe
 #### Interesting Aggregates
 
 
-(dataframe of saturated fat and rankings together in a grouped table)
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>saturated_fat(PDV)</th>
+    </tr>
+    <tr>
+      <th>rating</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1.0</th>
+      <td>46.68</td>
+    </tr>
+    <tr>
+      <th>2.0</th>
+      <td>42.88</td>
+    </tr>
+    <tr>
+      <th>3.0</th>
+      <td>40.09</td>
+    </tr>
+    <tr>
+      <th>4.0</th>
+      <td>36.43</td>
+    </tr>
+    <tr>
+      <th>5.0</th>
+      <td>39.23</td>
+    </tr>
+  </tbody>
+</table>
+
+
 The saturated fat content appears to be higher in recipes with lower ratings on average.
 
-(pivot table indexed by ratings with columns showing mean calories, ingredients, and steps per rating)
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>calories(number)</th>
+      <th>n_ingredients</th>
+      <th>n_steps</th>
+    </tr>
+    <tr>
+      <th>rating</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1.0</th>
+      <td>486.60</td>
+      <td>8.91</td>
+      <td>10.63</td>
+    </tr>
+    <tr>
+      <th>2.0</th>
+      <td>446.60</td>
+      <td>9.23</td>
+      <td>10.70</td>
+    </tr>
+    <tr>
+      <th>3.0</th>
+      <td>425.79</td>
+      <td>9.20</td>
+      <td>9.99</td>
+    </tr>
+    <tr>
+      <th>4.0</th>
+      <td>405.05</td>
+      <td>9.10</td>
+      <td>9.58</td>
+    </tr>
+    <tr>
+      <th>5.0</th>
+      <td>415.21</td>
+      <td>9.05</td>
+      <td>9.98</td>
+    </tr>
+  </tbody>
+</table>
+
 Calorie counts tend to go down as ratings increase while ingredients stays the same. Additionally, mean stpes decreases on average as rating goes down 
+
+
 
 <!--  -->
  STILL NEED TO ADD PLOTS FOR THIS TO GO ALONG. USE PLOT_KDE
@@ -430,7 +515,7 @@ Using K-S Statistic as test statistic,
 ##### Alternative Hypothesis:   
 - The distribution of steps is different for columns missing reviews.   
 
-With a p-value of 0.9989, we fail to reject the null hyporthesis that distributions of rating is different for columns missing reviews. This indicates that missingness of review does not dependent on rating.
+With a p-value of 0.01462006091994894, we reject the null hyporthesis in favor of the alternative hypothesis that the missingness of steps is dependent on rating.
 
 
 
